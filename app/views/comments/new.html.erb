@@ -1,0 +1,18 @@
+<% title "Comments" %>
+<% form_for([@post,@comment]) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :commenter,"Name" %><br />
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+  <p>
+    <%= link_to "Back",@post %>
+  </p>
+<%end %>
+

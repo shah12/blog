@@ -1,0 +1,13 @@
+<% title "Posts" %>
+
+<%= link_to 'New Post',new_post_path if logged_in? %>
+<%# hjhjh %>
+
+<% for post in @posts do %>
+  <h2><%= link_to(post.title,post) %></h2>
+  <p>Created <%= time_ago_in_words(post.created_at) %> ago</p>
+  <%= simple_format(post.body) %>
+    
+<% end %>
+
+
